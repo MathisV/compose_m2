@@ -73,3 +73,6 @@ android {
         jvmToolchain(17)
     }
 }
+dependencies {
+    implementation("androidx.annotation:annotation-jvm:1.7.0")
+}
