@@ -27,130 +27,27 @@ import org.jetbrains.compose.resources.painterResource
 @OptIn(ExperimentalResourceApi::class)
 @Composable()
 internal fun myCV(){
-    // Create a first view like a curriculum vitae
-    // It is simply compose of the following composables :
-    // a Card rounded shape container with photo
-    // a Text for the name
-    // a Text for the job
-    // a Text for the studies
-    // a Text for the skills
-    // Box for the CV
     Box(
         modifier = Modifier.fillMaxWidth().fillMaxHeight().background(color = Color(0xFFEDEDED))
     ){
-        // Colum
+
         Column(
-            modifier = Modifier.fillMaxWidth(0.3f).align(Alignment.TopStart).fillMaxHeight().background(color = Color(0xFFEDEDED)),
-            horizontalAlignment = Alignment.CenterHorizontally
-        ){
-            // Image
-            Image(
-                painter = painterResource("compose-multiplatform.xml"),
-                contentDescription = "My photo",
-                modifier = Modifier.fillMaxWidth()
-            )
-            Text(
-                text = "Mathis",
-                style = MaterialTheme.typography.h5
-            )
-            Text(
-                text = "Verleene",
-                style = MaterialTheme.typography.h5
-            )
-            Text(
-                text = "Apprentice",
-                style = MaterialTheme.typography.h6,
-                modifier = Modifier.padding(top = 8.dp)
-            )
+            modifier = Modifier.fillMaxWidth(0.3f).fillMaxHeight().background(color = Color(0xFFEDEDED)),
+            horizontalAlignment = Alignment.CenterHorizontally) {
+            sidebar(
+                items = listOf("Mathis Verleene", "21 Ans", "Apprenti", "Permis B"),
+                image = painterResource("compose-multiplatform.xml"))
         }
         Column( modifier = Modifier.fillMaxWidth(0.7f).align(Alignment.TopEnd).fillMaxHeight()) {
-            Card(
-                shape = RoundedCornerShape(8.dp),
-                backgroundColor = Color.White,
-                modifier = Modifier.fillMaxWidth(0.95f).padding(top = 8.dp)
-            ) {
-                Column(
-                    modifier = Modifier.fillMaxWidth().padding(8.dp),
-                ) {
-                    Text(
-                        text = "Studies",
-                        style = MaterialTheme.typography.h5,
-                        modifier = Modifier.fillMaxWidth(),
-                        textAlign = TextAlign.Center
-                    )
-                    Text(
-                        text = "Efficom Lille",
-                        style = MaterialTheme.typography.h6,
-                        modifier = Modifier.padding(top = 8.dp)
-                    )
-                    Text(
-                        text = "2021 - 2023",
-                        style = MaterialTheme.typography.body1,
-                        modifier = Modifier.padding(top = 8.dp).fillMaxWidth(),
-                        textAlign = TextAlign.End
-                    )
-                    Text(
-                        text = "IUT A Lille",
-                        style = MaterialTheme.typography.h6,
-                        modifier = Modifier.padding(top = 8.dp),
-                    )
-                    Text(
-                        text = "2019 - 2021",
-                        style = MaterialTheme.typography.body1,
-                        modifier = Modifier.padding(top = 8.dp).fillMaxWidth(),
-                        textAlign = TextAlign.End
-                    )
-                    Text(
-                        text = "High school Gustave Eiffel - Armentières",
-                        style = MaterialTheme.typography.h6,
-                        modifier = Modifier.padding(top = 8.dp),
-                    )
-                    Text(
-                        text = "2016 - 2019",
-                        style = MaterialTheme.typography.body1,
-                        modifier = Modifier.padding(top = 8.dp).fillMaxWidth(),
-                        textAlign = TextAlign.End
-                    )
-                }
-            }
-            Card(
-                shape = RoundedCornerShape(8.dp),
-                backgroundColor = Color.White,
-                modifier = Modifier.fillMaxWidth(0.95f).padding(top = 8.dp)
-            ) {
-                Column(
-                    modifier = Modifier.fillMaxWidth().padding(8.dp),
-                ) {
-                    Text(
-                        text = "Jobs",
-                        style = MaterialTheme.typography.h5,
-                        modifier = Modifier.fillMaxWidth(),
-                        textAlign = TextAlign.Center
-                    )
-                    Text(
-                        text = "Decathlon United",
-                        style = MaterialTheme.typography.h6,
-                        modifier = Modifier.padding(top = 8.dp)
-                    )
-                    Text(
-                        text = "Apprentice Ops in Decathlon in BU Customer Growth. I manage infrastructure to deploy app like Decathlon Login.",
-                        style = MaterialTheme.typography.body1,
-                        modifier = Modifier.padding(top = 8.dp),
-                        textAlign = TextAlign.Justify
-                    )
-                    Text(
-                        text = "Groupe SEE",
-                        style = MaterialTheme.typography.h6,
-                        modifier = Modifier.padding(top = 8.dp)
-                    )
-                    Text(
-                        text = "Apprentice Dev in a team of 4 peoples in Groupe SEE i've worked on an intranet for the company",
-                        style = MaterialTheme.typography.body1,
-                        modifier = Modifier.padding(top = 8.dp),
-                        textAlign = TextAlign.Justify
-                    )
-                }
-            }
+            card(myCard("Studies", listOf(
+                CardItem("Efficom - Lille", "2021 - 2023"),
+                CardItem("IUT A - Lille", "2019 - 2021"),
+                CardItem("Lycée Gustave Eiffel - Armentières", "2016 - 2019")
+            )))
+            card(myCard("Jobs", listOf(
+                CardItem("Decathlon United", "2021 - 2023", "Apprentice Ops in Decathlon in BU Customer Growth. I manage infrastructure to deploy app like Decathlon Login."),
+                CardItem("Groupe SEE", "2020 - 2021", "Apprentice Dev in a team of 4 peoples in Groupe SEE i've worked on an intranet for the company")
+            )))
         }
     }
 }
