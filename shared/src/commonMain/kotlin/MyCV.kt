@@ -36,7 +36,7 @@ internal fun myCV(){
             horizontalAlignment = Alignment.CenterHorizontally) {
             sidebar(
                 items = listOf("Mathis Verleene", "21 Ans", "Apprenti", "Permis B"),
-                image = painterResource("compose-multiplatform.xml"))
+                image = imageResources("photo_profile.jpeg"))
         }
         Column( modifier = Modifier.fillMaxWidth(0.7f).align(Alignment.TopEnd).fillMaxHeight()) {
             card(myCard("Studies", listOf(
