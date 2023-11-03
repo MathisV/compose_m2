@@ -19,14 +19,14 @@ import androidx.compose.ui.unit.dp
 import moe.tlaster.precompose.navigation.Navigator
 
 @Composable
-internal fun welcomeScreen(navigator: Navigator) {
+internal fun scoreScreen(navigator: Navigator, score: String) {
     Box(
         modifier = Modifier.fillMaxWidth().fillMaxHeight().background(color = Color(0xFFEDEDED)),
         contentAlignment = Alignment.Center
     ) {
         Card(
             shape = RoundedCornerShape(8.dp),
-            backgroundColor = Color.White,
+            backgroundColor = Color.Green,
             modifier = Modifier.fillMaxWidth(0.8f)
         ) {
             Column(
@@ -34,15 +34,15 @@ internal fun welcomeScreen(navigator: Navigator) {
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Text(
-                    text = "Welcome to the Quiz",
+                    text = "$score",
                     style = MaterialTheme.typography.h5
                 )
                 Spacer(modifier = Modifier.height(16.dp))
                 Button(
-                    onClick = { navigator.navigate(route = "/quiz") },
+                    onClick = { navigator.navigate(route = "/quiz")},
                     shape = RoundedCornerShape(8.dp)
                 ) {
-                    Text(text = "Start Quiz")
+                    Text(text = "Retry")
                 }
             }
         }

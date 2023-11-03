@@ -1,26 +1,37 @@
-import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.material.Button
 import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
-import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
+import network.data.Answer
+import network.data.Question
 import org.jetbrains.compose.resources.ExperimentalResourceApi
-import org.jetbrains.compose.resources.painterResource
 
-@OptIn(ExperimentalResourceApi::class)
 @Composable
 internal fun App() {
     MaterialTheme {
-        myCV()
-    //welcomeScreen()
+        //myCV()
+        //welcomeScreen()
+        //scoreScreen(18)
+        rootNavHost()
+        /*val questions = listOf(
+            Question(
+                1,
+                "What is the capital of France?",
+                1,
+                listOf(Answer(1, "Paris"), Answer(2, "London"), Answer(3, "Berlin"))
+            ),
+            Question(
+                2,
+                "What is the capital of Germany?",
+                3,
+                listOf(Answer(1, "Paris"), Answer(2, "London"), Answer(3, "Berlin"))
+            ),
+            Question(
+                3,
+                "What is the capital of England?",
+                2,
+                listOf(Answer(1, "Paris"), Answer(2, "London"), Answer(3, "Berlin"))
+            )
+        )
+        questionScreen(navigator = null, questions = questions)*/
     }
 }
 
