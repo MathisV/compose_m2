@@ -90,7 +90,7 @@ internal fun questionScreen(navigator: Navigator?, questions: List<Question>) {
                         } else {
                             // Navigation to score screen
                             navigator?.navigate(route = "/score/$score out of ${questions.size}")
-                        }
+                        }  
                     },
                     shape = RoundedCornerShape(8.dp),
                 ) {

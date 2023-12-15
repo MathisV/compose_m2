@@ -1,5 +1,7 @@
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import network.QuizRepository
 import network.data.Answer
 import network.data.Question
 import org.jetbrains.compose.resources.ExperimentalResourceApi
@@ -32,6 +34,7 @@ internal fun App() {
             )
         )
         questionScreen(navigator = null, questions = questions)*/
+
     }
 }
 
